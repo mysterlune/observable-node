@@ -1,0 +1,38 @@
+// Only add vendor styles and overrides in this file
+@import 'bootstrap';
+
+// Bootstrap overrides
+.navbar-brand {
+  > .glyphicon-cloud {
+    position: relative;
+    top: 4px;
+  }
+}
+
+.jumbotron {
+  .glyphicon-cloud {
+    position: relative;
+    top: 16px;
+  }
+}
+
+.jumbotron-icon {
+  > .fa-6 {
+    font-size: 20em;
+  }
+
+  .faded {
+    opacity: 0.1;
+  }
+}
+
+.list-group-item-heading {
+  > .fa-6 {
+    font-size: 1.5em;
+    margin-left: 10px;
+  }
+
+  .faded {
+    opacity: 0.4;
+  }
+}

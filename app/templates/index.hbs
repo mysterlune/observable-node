@@ -1,0 +1,43 @@
+<div class="row row-centered">
+  <div class="col-sm-4 col-centered">
+    <div class="panel panel-default bootcards-summary">
+      <div class="panel-body">
+        <div class="row row-centered">
+          <div class="col-md-12 bootcards-list">
+          {{#if isRecording}}
+          <button class="btn btn-primary btn-lg btn-block disabled">Record</button>
+          {{#if isHammering}}
+          <button class="btn btn-danger btn-lg btn-block disabled">Hammer Time!</button>
+          {{else}}
+          <button {{action "hammer"}} class="btn btn-danger btn-lg btn-block">Hammer Time!</button>
+          {{/if}}
+          {{else}}
+          <button {{action "record"}} class="btn btn-danger btn-lg btn-block">Record</button>
+          {{#if isRefreshing}}
+          <span class="btn btn-warning btn-lg btn-block">Please hold...</span>
+          {{/if}}
+          {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-sm-offset-1 col-centered">
+    <div class="panel panel-default bootcards-summary">
+      <div class="panel-body">
+        <div class="row row-centered">
+          <div class="col-md-12 bootcards-list">
+          {{#each model as |recording|}}
+            <div class="list-group-item">
+              {{#link-to "graph" recording}}
+              <h4 class="list-group-item-heading"><i class="fa fa-area-chart fa-6 faded"></i>{{recording.graphName}}</h4>
+              {{/link-to}}
+            </div>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{outlet}}
